@@ -1,0 +1,12 @@
+#<src>										<mnt_point>	<type>	<mnt_flags and options>							<fs_mgr_flags>
+/dev/block/platform/msm_sdcc.2/by-num/p17	/misc		emmc	defaults										defaults
+/dev/block/platform/msm_sdcc.2/by-num/p21	/recovery	emmc	defaults										defaults
+/dev/block/platform/msm_sdcc.2/by-num/p22	/boot		emmc	defaults										defaults
+/dev/block/platform/msm_sdcc.2/by-num/p25	/system		ext4	ro,noatime,barrier=0							wait
+/dev/block/platform/msm_sdcc.2/by-num/p26	/data		ext4	noatime,nosuid,nodev,barrier=0,noauto_da_alloc	wait,check,encryptable=footer
+/dev/block/platform/msm_sdcc.2/by-num/p27	/cache		ext4	noatime,nosuid,nodev,barrier=0					wait,check
+/dev/block/platform/msm_sdcc.2/by-num/p28	/devlog		ext4	noatime,nosuid,nodev,barrier=0,noauto_da_alloc	wait
+
+# SD Card
+/devices/platform/msm_sdcc.4/mmc_host/mmc2	auto		auto	defaults										voldmanaged=sdcard0:auto,noemulatedsd
+
