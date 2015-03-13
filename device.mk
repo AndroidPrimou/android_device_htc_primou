@@ -69,16 +69,19 @@ PRODUCT_PACKAGES += \
 # Audio properties
 PRODUCT_PROPERTY_OVERRIDES += \
 	media.a1026.nsForVoiceRec=0 \
-	media.a1026.enableA1026=0 \
-	htc.audio.alt.enable=0 \
+	media.a1026.enableA1026=1 \
+	htc.audio.alt.enable=1 \
 	htc.audio.hac.enable=1
 
+# Use KSM by default
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.ksm.default=1
 
 
 # Device uses high-density artwork where available
-PRODUCT_LOCALES += en_US
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_LOCALES += en_US
 
 
 # Disable ADB authentication and use root shell
@@ -86,3 +89,9 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 #    ro.adb.secure=0 \
 #    ro.secure=0
 
+
+# Call dalvik heap config
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+
+# lower the increment
+ADDITIONAL_BUILD_PROPERTIES += dalvik.vm.heapgrowthlimit=36m
