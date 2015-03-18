@@ -69,13 +69,9 @@ PRODUCT_PACKAGES += \
 # Audio properties
 PRODUCT_PROPERTY_OVERRIDES += \
 	media.a1026.nsForVoiceRec=0 \
-	media.a1026.enableA1026=1 \
-	htc.audio.alt.enable=1 \
+	media.a1026.enableA1026=0 \
+	htc.audio.alt.enable=0 \
 	htc.audio.hac.enable=1
-
-# Use KSM by default
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.ksm.default=1
 
 
 # Device uses high-density artwork where available
