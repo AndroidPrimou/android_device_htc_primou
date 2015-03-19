@@ -6,6 +6,7 @@ TARGET_BOOTLOADER_BOARD_NAME := primou
 
 # Kernel
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.selinux=permissive
+BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88 androidboot.hardware=qcom
 BOARD_KERNEL_BASE := 0x13F00000
 BOARD_KERNEL_PAGE_SIZE := 4096
 
@@ -49,6 +50,21 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 BUILD_EMULATOR_SENSORS_MODULE := false
 BUILD_EMULATOR_GPS_MODULE := false
 
-# Recovery
-TARGET_RECOVERY_FSTAB = device/htc/primou/rootdir/fstab.primou
 
+# Recovery
+BOARD_HAS_NO_SELECT_BUTTON := true
+
+# TWRP
+DEVICE_RESOLUTION := 480x800
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_INTERNAL_STORAGE_PATH := "/sdcard"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+#TW_INCLUDE_JB_CRYPTO := true
+RECOVERY_VARIANT := twrp
+TW_INCLUDE_DUMLOCK := true
+#TW_EXCLUDE_MTP := true
+#TW_NO_USB_STORAGE := true
+TW_NO_CPU_TEMP := true
+#TW_USE_TOOLBOX := true
+#TW_NO_SCREEN_BLANK := true
+#RECOVERY_GRAPHICS_USE_LINELENGTH := true
