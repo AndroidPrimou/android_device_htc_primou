@@ -31,38 +31,83 @@
  */
 
 static const struct sensor_t sSensorList[] = {
-        { "BMA150 3-axis Accelerometer",
-                "Bosh",
-                1, SENSORS_HANDLE_BASE+ID_A,
-                SENSOR_TYPE_ACCELEROMETER, 4.0f*9.81f, (4.0f*9.81f)/256.0f, 0.2f, 0, 0, 0, { } },
-        { "AK8975 3-axis Magnetic field sensor",
-                "Asahi Kasei",
-                1, SENSORS_HANDLE_BASE+ID_M,
-                SENSOR_TYPE_MAGNETIC_FIELD, 2000.0f, 1.0f/16.0f, 6.8f, 0, 0, 0, { } },
-        { "AK8975 Orientation sensor",
-                "Asahi Kasei",
-                1, SENSORS_HANDLE_BASE+ID_O,
-                SENSOR_TYPE_ORIENTATION, 360.0f, 1.0f, 7.0f, 0, 0, 0, { } },
-        { "CM3602 Proximity sensor",
-                "Capella Microsystems",
-                1, SENSORS_HANDLE_BASE+ID_P,
-                SENSOR_TYPE_PROXIMITY,
-                PROXIMITY_THRESHOLD_CM, PROXIMITY_THRESHOLD_CM,
-                0.5f, 0, 0, 0, { } },
-        { "CM3602 Light sensor",
-                "Capella Microsystems",
-                1, SENSORS_HANDLE_BASE+ID_L,
-                SENSOR_TYPE_LIGHT, 10240.0f, 1.0f, 0.5f, 0, 0, 0, { } },
-        { "CM3628 Proximity sensor",
-                "Capella Microsystems",
-                1, SENSORS_HANDLE_BASE+ID_P,
-                SENSOR_TYPE_PROXIMITY,
-                PROXIMITY_THRESHOLD_CM, PROXIMITY_THRESHOLD_CM,
-                0.5f, 0, 0, 0, { } },
-        { "CM3628 Light sensor",
-                "Capella Microsystems",
-                1, SENSORS_HANDLE_BASE+ID_L,
-                SENSOR_TYPE_LIGHT, 10240.0f, 1.0f, 0.5f, 0, 0, 0, { } },
+	{
+		.name       = "BMA150 3-axis Accelerometer",
+		.vendor     = "Bosh",
+		.version    = 1,
+		.handle     = SENSORS_HANDLE_BASE+ID_A,
+		.type       = SENSOR_TYPE_ACCELEROMETER,
+		.maxRange   = 4.0f*9.81f,
+		.resolution = (4.0f*9.81f)/256.0f,
+		.power      = 0.2f,
+		.reserved   = {}
+        },
+	{
+		.name       = "AK8975 3-axis Magnetic field sensor",
+		.vendor     = "Asahi Kasei",
+		.version    = 1,
+		.handle     = SENSORS_HANDLE_BASE+ID_M,
+		.type       = SENSOR_TYPE_MAGNETIC_FIELD,
+		.maxRange   = 2000.0f,
+		.resolution = 1.0f/16.0f,
+		.power      = 6.8f,
+		.reserved   = {}
+        },
+	{
+		.name       = "AK8975 Orientation sensor",
+		.vendor     = "Asahi Kasei",
+		.version    = 1,
+		.handle     = SENSORS_HANDLE_BASE+ID_O,
+		.type       = SENSOR_TYPE_ORIENTATION,
+		.maxRange   = 360.0f,
+		.resolution = 1.0f,
+		.power      = 7.0f,
+		.reserved   = {}
+        },
+	{
+		.name       = "CM3602 Proximity sensor",
+		.vendor     = "Capella Microsystems",
+		.version    = 1,
+		.handle     = SENSORS_HANDLE_BASE+ID_P,
+		.type       = SENSOR_TYPE_PROXIMITY,
+		.maxRange   = PROXIMITY_THRESHOLD_CM,
+		.resolution = PROXIMITY_THRESHOLD_CM,
+		.power      = 0.5f,
+		.reserved   = {}
+        },
+	{
+		.name       = "CM3602 Light sensor",
+		.vendor     = "Capella Microsystems",
+		.version    = 1,
+		.handle     = SENSORS_HANDLE_BASE+ID_L,
+		.type       = SENSOR_TYPE_LIGHT,
+		.maxRange   = 10240.0f,
+		.resolution = 1.0f,
+		.power      = 0.5f,
+		.reserved   = {}
+        },
+	{
+		.name       = "CM3628 Proximity sensor",
+		.vendor     = "Capella Microsystems",
+		.version    = 1,
+		.handle     = SENSORS_HANDLE_BASE+ID_P,
+		.type       = SENSOR_TYPE_PROXIMITY,
+		.maxRange   = PROXIMITY_THRESHOLD_CM,
+		.resolution = PROXIMITY_THRESHOLD_CM,
+		.power      = 0.5f,
+		.reserved   = {}
+        },
+	{
+		.name       = "CM3628 Light sensor",
+		.vendor     = "Capella Microsystems",
+		.version    = 1,
+		.handle     = SENSORS_HANDLE_BASE+ID_L,
+		.type       = SENSOR_TYPE_LIGHT,
+		.maxRange   = 10240.0f,
+		.resolution = 1.0f,
+		.power      = 0.5f,
+		.reserved   = {}
+	},
 };
 
 static int open_sensors(const struct hw_module_t* module, const char* name,
@@ -71,8 +116,8 @@ static int open_sensors(const struct hw_module_t* module, const char* name,
 static int sensors__get_sensors_list(struct sensors_module_t* module,
         struct sensor_t const** list)
 {
-    *list = sSensorList;
-    return ARRAY_SIZE(sSensorList);
+	*list = sSensorList;
+	return ARRAY_SIZE(sSensorList);
 }
 
 static struct hw_module_methods_t sensors_module_methods = {
@@ -81,13 +126,13 @@ static struct hw_module_methods_t sensors_module_methods = {
 
 struct sensors_module_t HAL_MODULE_INFO_SYM = {
     .common = {
-        .tag = HARDWARE_MODULE_TAG,
-        .version_major = 1,
-        .version_minor = 0,
-        .id = SENSORS_HARDWARE_MODULE_ID,
-        .name = "AK8975A & CM36xx Sensors Module",
-        .author = "The Android Open Source Project",
-        .methods = &sensors_module_methods,
+	.tag = HARDWARE_MODULE_TAG,
+	.version_major = 1,
+	.version_minor = 0,
+	.id = SENSORS_HARDWARE_MODULE_ID,
+	.name = "MSM7X30 Sensors Module",
+	.author = "The Android Open Source Project",
+	.methods = &sensors_module_methods,
     },
     .get_sensors_list = sensors__get_sensors_list
 };
