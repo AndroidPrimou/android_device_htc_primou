@@ -5,7 +5,7 @@
 TARGET_BOOTLOADER_BOARD_NAME := primou
 
 # Kernel
-BOARD_KERNEL_CMDLINE := no_console_suspend=1
+BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x13F00000
 BOARD_KERNEL_PAGE_SIZE := 4096
 
