@@ -53,14 +53,16 @@ BUILD_EMULATOR_GPS_MODULE := false
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
+TARGET_RECOVERY_FSTAB = device/htc/primou/rootdir/fstab.primou
+RECOVERY_FSTAB_VERSION := 2
 
 # TWRP
+RECOVERY_VARIANT := twrp
 DEVICE_RESOLUTION := 480x800
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_INTERNAL_STORAGE_PATH := "/sdcard"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 #TW_INCLUDE_JB_CRYPTO := true
-RECOVERY_VARIANT := twrp
 TW_INCLUDE_DUMLOCK := true
 #TW_EXCLUDE_MTP := true
 #TW_NO_USB_STORAGE := true
