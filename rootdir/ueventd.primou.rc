@@ -21,7 +21,8 @@
 # the genlock client device node is world writable/readable.
 /dev/genlock              0666   root       root
 
-# HTC diag
+# Diag
+/dev/diag                 0666   root       root
 /dev/htcdiag              0660   radio      radio
 /dev/radio_feedback       0660   radio      radio
 
@@ -50,5 +51,3 @@
 /dev/htcdrm               0660   drm        system
 
 /dev/cpu_dma_latency      0660   system     system
-
-
