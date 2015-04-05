@@ -9,7 +9,8 @@ TARGET_BOOTLOADER_BOARD_NAME := primou
 
 # Kernel
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.hardware=htc7x30 androidboot.selinux=permissive
-BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88 androidboot.hardware=qcom
+# cmdline for recovery:
+#BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.hardware=qcom androidboot.selinux=permissive msmsdcc_power_gpio=88
 BOARD_KERNEL_BASE := 0x13F00000
 BOARD_KERNEL_PAGE_SIZE := 4096
 
@@ -35,6 +36,7 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 6194304
 BOARD_FLASH_BLOCK_SIZE := 262144
 
 TARGET_KERNEL_SOURCE := kernel/htc/msm7x30-androidprimou
+#TARGET_KERNEL_SOURCE := kernel/htc/msm7x30-odp-patches
 TARGET_KERNEL_CONFIG := primou_defconfig
 #TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
 #TARGET_PREBUILT_KERNEL := device/htc/primou/prebuilt/kernel/kernel
@@ -52,21 +54,21 @@ BOARD_BLUEDROID_VENDOR_CONF := device/htc/primou/bluetooth/libbt_vndcfg.txt
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := primou
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
+
 # Recovery
 TARGET_RECOVERY_FSTAB = device/htc/msm7x30-common/rootdir/fstab.htc7x30
 RECOVERY_FSTAB_VERSION := 2
 
+# Charge mode
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
+
 # TWRP
 RECOVERY_VARIANT := twrp
-DEVICE_RESOLUTION := 480x800
+TW_THEME := portrait_mdpi
+#RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_INTERNAL_STORAGE_PATH := "/sdcard"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-#TW_INCLUDE_JB_CRYPTO := true
-TW_INCLUDE_DUMLOCK := true
-#TW_EXCLUDE_MTP := true
-#TW_NO_USB_STORAGE := true
-TW_NO_CPU_TEMP := true
+TW_INCLUDE_CRYPTO := true
 #TW_USE_TOOLBOX := true
 #TW_NO_SCREEN_BLANK := true
-#RECOVERY_GRAPHICS_USE_LINELENGTH := true
+#TW_NO_CPU_TEMP := true
+TARGET_RECOVERY_DEVICE_MODULES := chargeled
