@@ -23,11 +23,8 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/primou/overlay
 
 COMMON_PATH := device/htc/primou
 
-# Ramdisk
-PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/rootdir/init.primou.rc:root/init.primou.rc \
-	$(COMMON_PATH)/rootdir/ueventd.primou.rc:root/ueventd.primou.rc \
-	$(COMMON_PATH)/rootdir/fstab.primou:root/fstab.primou
+# Boot ramdisk setup
+PRODUCT_PACKAGES += init.target.rc
 
 # ACDB
 PRODUCT_COPY_FILES += \
