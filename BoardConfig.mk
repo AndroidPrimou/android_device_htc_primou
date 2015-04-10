@@ -51,5 +51,6 @@ BUILD_EMULATOR_SENSORS_MODULE := false
 BUILD_EMULATOR_GPS_MODULE := false
 
 # Recovery
-TARGET_RECOVERY_FSTAB = device/htc/primou/rootdir/fstab.primou
+TARGET_RECOVERY_FSTAB = device/htc/msm7x30-common/rootdir/fstab.qcom
+RECOVERY_FSTAB_VERSION := 2
 
