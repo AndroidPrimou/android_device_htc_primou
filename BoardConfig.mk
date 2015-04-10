@@ -8,8 +8,7 @@
 TARGET_BOOTLOADER_BOARD_NAME := primou
 
 # Kernel
-BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.hardware=htc7x30 androidboot.selinux=permissive
-BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88 androidboot.hardware=qcom
+BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.hardware=qcom androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x13F00000
 BOARD_KERNEL_PAGE_SIZE := 4096
 
