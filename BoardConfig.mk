@@ -53,7 +53,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := primou
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
 # Recovery
-TARGET_RECOVERY_FSTAB = device/htc/msm7x30-common/rootdir/fstab.htc7x30
+TARGET_RECOVERY_FSTAB = device/htc/msm7x30-common/rootdir/fstab.qcom
 RECOVERY_FSTAB_VERSION := 2
 
 # TWRP
