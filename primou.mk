@@ -57,16 +57,6 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
 
 
-# BCM4330 firmware
-PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/rootdir/system/vendor/firmware/bcm4330.hcd:system/vendor/firmware/bcm4330.hcd \
-	$(COMMON_PATH)/rootdir/system/vendor/firmware/fw_bcm4330_apsta_b1.bin:system/vendor/firmware/fw_bcm4330_apsta_b1.bin \
-	$(COMMON_PATH)/rootdir/system/vendor/firmware/fw_bcm4330_apsta_b2.bin:system/vendor/firmware/fw_bcm4330_apsta_b2.bin \
-	$(COMMON_PATH)/rootdir/system/vendor/firmware/fw_bcm4330_b2.bin:system/vendor/firmware/fw_bcm4330_b2.bin \
-	$(COMMON_PATH)/rootdir/system/vendor/firmware/fw_bcm4330_b1.bin:system/vendor/firmware/fw_bcm4330_b1.bin \
-	$(COMMON_PATH)/rootdir/system/vendor/firmware/fw_bcm4330_p2p_b2.bin:system/vendor/firmware/fw_bcm4330_p2p_b2.bin \
-	$(COMMON_PATH)/rootdir/system/vendor/firmware/fw_bcm4330_p2p_b1.bin:system/vendor/firmware/fw_bcm4330_p2p_b1.bin
-
 # Lights / Sensors / GPS / Bluetooth
 PRODUCT_PACKAGES += \
 	lights.primou \
