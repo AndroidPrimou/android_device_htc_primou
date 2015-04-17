@@ -48,11 +48,6 @@ BOARD_VOLD_MAX_PARTITIONS := 36
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/primou/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/htc/primou/bluetooth/libbt_vndcfg.txt
 
-# GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := primou
-BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
-
-
 # Recovery
 TARGET_RECOVERY_FSTAB = device/htc/msm7x30-common/rootdir/fstab.qcom
 RECOVERY_FSTAB_VERSION := 2
