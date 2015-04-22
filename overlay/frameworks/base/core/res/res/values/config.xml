@@ -67,15 +67,15 @@
     -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
         <item>45</item>
-	<item>55</item>
-	<item>65</item>
-	<item>80</item>
-	<item>100</item>
-	<item>122</item>
-	<item>160</item>
-	<item>198</item>
-	<item>231</item>
-	<item>255</item>
+	    <item>55</item>
+	    <item>65</item>
+	    <item>80</item>
+	    <item>100</item>
+	    <item>122</item>
+	    <item>160</item>
+	    <item>198</item>
+	    <item>231</item>
+	    <item>255</item>
     </integer-array>
 
     <!-- Array of output values for button backlight corresponding to the LUX values
@@ -94,13 +94,6 @@
         <item>0</item>
         <item>0</item>
     </integer-array>
-
-    <string-array name="config_locationProviderPackageNames" translatable="false">
-        <!-- The standard AOSP fused location provider -->
-        <item>com.android.location.fused</item>
-        <!-- The Google Network Location Services location provider -->
-        <item>com.google.android.location</item>
-    </string-array>
 
     <!-- Array of output values for keyboard backlight corresponding to the LUX values
          in the config_autoBrightnessLevels array.  This array should have size one greater
@@ -179,6 +172,12 @@
         <item>7</item>
     </integer-array>
 
+
+    <!-- Configure mobile network MTU. The standard default is set here but each carrier
+         may have a specific value set in an overlay config.xml file.
+         Upstream default of 1358 will kill tethering so keep it on 1500.-->
+    <integer name="config_mobile_mtu">1500</integer>
+
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">false</bool>
 
@@ -196,4 +195,10 @@
 
     <!-- Disable lockscreen translucent decor by default -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
+
+    <!-- LED Flashlight -->
+    <bool name="config_enableTorch">true</bool>
+
+    <!-- Indicate whether the SD card is accessible without removing the battery. -->
+    <bool name="config_batterySdCardAccessibility">true</bool>
 </resources>
