@@ -55,13 +55,13 @@ RECOVERY_FSTAB_VERSION := 2
 # Charge mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 
-# TWRP
-RECOVERY_VARIANT := twrp
-TW_THEME := portrait_mdpi
-#RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_INCLUDE_CRYPTO := true
-#TW_USE_TOOLBOX := true
-#TW_NO_SCREEN_BLANK := true
-#TW_NO_CPU_TEMP := true
-TARGET_RECOVERY_DEVICE_MODULES := chargeled
+## TWRP
+#RECOVERY_VARIANT := twrp
+#TW_THEME := portrait_mdpi
+##RECOVERY_GRAPHICS_USE_LINELENGTH := true
+#TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+#TW_INCLUDE_CRYPTO := true
+##TW_USE_TOOLBOX := true
+##TW_NO_SCREEN_BLANK := true
+##TW_NO_CPU_TEMP := true
+#TARGET_RECOVERY_DEVICE_MODULES := chargeled
