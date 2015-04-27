@@ -79,6 +79,6 @@ PRODUCT_LOCALES += en_US
 
 
 # Disable ADB authentication and use root shell
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.adb.secure=0 \
-    ro.secure=0
+#ADDITIONAL_DEFAULT_PROPERTIES += \
+#    ro.adb.secure=0 \
+#    ro.secure=0
