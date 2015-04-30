@@ -33,8 +33,8 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 1232072704
 BOARD_BOOTIMAGE_PARTITION_SIZE := 6194304
 BOARD_FLASH_BLOCK_SIZE := 262144
 
+TARGET_KERNEL_SOURCE := kernel/htc/msm7x30
 #TARGET_KERNEL_SOURCE := kernel/htc/msm7x30-androidprimou
-TARGET_KERNEL_SOURCE := kernel/htc/msm7x30-odp-patches
 TARGET_KERNEL_CONFIG := primou_defconfig
 #TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
 #TARGET_PREBUILT_KERNEL := device/htc/primou/prebuilt/kernel/kernel
@@ -55,13 +55,13 @@ RECOVERY_FSTAB_VERSION := 2
 # Charge mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 
-## TWRP
+# TWRP
 #RECOVERY_VARIANT := twrp
-#TW_THEME := portrait_mdpi
-##RECOVERY_GRAPHICS_USE_LINELENGTH := true
-#TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-#TW_INCLUDE_CRYPTO := true
-##TW_USE_TOOLBOX := true
-##TW_NO_SCREEN_BLANK := true
-##TW_NO_CPU_TEMP := true
-#TARGET_RECOVERY_DEVICE_MODULES := chargeled
+TW_THEME := portrait_mdpi
+#RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_INCLUDE_CRYPTO := true
+#TW_USE_TOOLBOX := true
+#TW_NO_SCREEN_BLANK := true
+#TW_NO_CPU_TEMP := true
+TARGET_RECOVERY_DEVICE_MODULES := chargeled
