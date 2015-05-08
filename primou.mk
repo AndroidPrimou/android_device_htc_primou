@@ -26,12 +26,6 @@ COMMON_PATH := device/htc/primou
 # Boot ramdisk setup
 PRODUCT_PACKAGES += init.target.rc
 
-# ACDB
-PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/rootdir/system/etc/firmware/default.acdb:system/etc/firmware/default.acdb \
-	$(COMMON_PATH)/rootdir/system/etc/firmware/default_org.acdb:system/etc/firmware/default_org.acdb
-
-
 # Audio DSP Profiles
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
