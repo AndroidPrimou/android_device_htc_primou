@@ -61,7 +61,7 @@ PRODUCT_PACKAGES += \
 # Audio properties
 PRODUCT_PROPERTY_OVERRIDES += \
 	media.a1026.nsForVoiceRec=0 \
-	media.a1026.enableA1026=0 \
+	media.a1026.enableA1026=1 \
 	htc.audio.alt.enable=0 \
 	htc.audio.hac.enable=1
 
