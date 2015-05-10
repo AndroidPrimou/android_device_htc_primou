@@ -48,7 +48,7 @@ PRODUCT_COPY_FILES += \
 
 
 # Call BCM4330 firmware
-#$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
 
 
 # Lights / Sensors / GPS / Bluetooth
