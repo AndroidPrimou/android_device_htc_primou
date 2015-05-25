@@ -12,3 +12,5 @@ on boot
     chmod 0664 /sys/android_touch/dt2w_max_duration
     chown root system /sys/android_touch/dt2w_min_duration
     chmod 0664 /sys/android_touch/dt2w_min_duration
+    chown root system /sys/android_touch/dt2w_barrier_y
+    chmod 0664 /sys/android_touch/dt2w_barrier_y
